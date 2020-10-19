@@ -1,16 +1,17 @@
 <h1>首頁</h1>
+<p><strong>使用教材:PC-Hardware</strong></p>
+<p><strong>編輯之章節:UNIT4 Networking and Internet</strong></p>
+<p>                                <span style="color: #ff6600;">PCH14-TCP and UDP Protocols(傳輸控制協定和用戶資料報協定)</span></p>
+<p>                                             <span style="color: #ff6600;">FTP</span></p>
+<p>                                             <span style="color: #ff6600;">SSL</span></p>
+<p>                                <span style="color: #ff6600;">PCH15-Introduction to Wireless Networking(無線網絡簡介)</span></p>
+<p>                                <span style="color: #ff6600;">PCH16-Internet Connectivity(互聯網連接)</span></p>
 <h1>錯誤排除紀錄</h1>
 <p><strong>1.</strong><span style="color: #ff6600;">10/14 切換成2階時轉換靜態時出現404錯誤。</span></p>
 <p><span style="color: #ff6600;">解決方法:要轉2階的名稱裡不能有<strong><span style="color: #000000;">:/"</span></strong>這些符號</span></p>
 <p><strong>2.</strong></p>
 <h1>HomeWork1</h1>
-<p><strong>使用教材:PC-Hardware</strong></p>
-<p><strong>編輯之章節:UNIT4 Networking and Internet</strong></p>
-<p style="text-align: left;"><span style="color: #ff6600;">                                PCH14-TCP and UDP Protocols(傳輸控制協定和用戶資料報協定)</span></p>
-<p style="text-align: left;"><span color="#ff6600" style="color: #ff6600;">                                             FTP</span></p>
-<p style="text-align: left;"><span color="#ff6600" style="color: #ff6600;">                                             SSL</span></p>
-<p style="text-align: left;"><span style="color: #ff6600;">                                PCH15-Introduction to Wireless Networking(無線網絡簡介)</span></p>
-<p style="text-align: left;"><span style="color: #ff6600;">                                PCH16-Internet Connectivity(互聯網連接)</span></p>
+<p><strong></strong></p>
 <h2>PCH14-TCP and UDP Protocols</h2>
 <p><span style="color: #ff6600;">FTP</span>(檔案傳輸協定)</p>
 <p><span style="color: #ff6600;">SSL</span>(安全通訊協定)</p>
@@ -24,4 +25,6 @@
 <h3 class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">Active vs. Passive</span></strong></h3>
 <p><span lang="zh-TW">Active FTP is a point-to-point connection that the client initiates and connects to the FTP server port 21 for commands and port 20 for data. That means that the server will actively initiate the connections back to the client’s listening port and will require the client to allow these connections, which the firewall blocks by default. Passive FTP allows the client to initiate the data connection on port 21, and then the FTP server moves the command and data connections to random ports on the server (with numbers higher than 1023). By initiating the connection from the client side, the burden of allowing a pass-through on the firewall resides with the FTP server administrator, who is better equipped to set a range of ports allowing connectivity.</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">主動FTP是點對點連接，客戶端啟動該點並連接到FTP服務器端口21（用於命令）和端口20（用於數據）。這意味著服務器將主動啟動與客戶端偵聽端口的連接，並要求客戶端允許這些連接，防火牆默認情況下會阻止這些連接。被動FTP允許客戶端在端口21上啟動數據連接，然後FTP服務器將命令和數據連接移至服務器上的隨機端口（數字大於1023）。通過從客戶端發起連接，允許通過防火牆的負擔由FTP服務器管理員承擔，他可以更好地設置一系列允許連接的端口。</span></strong></p>
-<p></p>
+<h3>Using FTP</h3>
+<p><span>Accessing FTP public servers using the command line is not nearly as user-friendly as using a web browser. However, both methods are viable and in use in corporate networks.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">使用命令行訪問FTP公共服務器並不像使用Web瀏覽器那樣友好。但是，這兩種方法都是可行的，並且已在公司網絡中使用。</span></p>
