@@ -1,11 +1,11 @@
 <h1>首頁</h1>
 <p><strong>使用教材:PC-Hardware</strong></p>
 <p><strong>編輯之章節:UNIT4 Networking and Internet</strong></p>
-<p>                                <span style="color: #ff6600;">PCH14-TCP and UDP Protocols(傳輸控制協定和用戶資料報協定)</span></p>
-<p>                                             <span style="color: #ff6600;">FTP</span></p>
-<p>                                             <span style="color: #ff6600;">SSL</span></p>
-<p>                                <span style="color: #ff6600;">PCH15-Introduction to Wireless Networking(無線網絡簡介)</span></p>
-<p>                                <span style="color: #ff6600;">PCH16-Internet Connectivity(互聯網連接)</span></p>
+<p>       <span style="color: #ff6600;">PCH14-TCP and UDP Protocols(傳輸控制協定和用戶資料報協定)</span></p>
+<p>                  <span style="color: #ff6600;">FTP</span></p>
+<p>                  <span style="color: #ff6600;">SSL</span></p>
+<p>       <span style="color: #ff6600;">PCH15-Introduction to Wireless Networking(無線網絡簡介)</span></p>
+<p>       <span style="color: #ff6600;">PCH16-Internet Connectivity(互聯網連接)</span></p>
 <h1>錯誤排除紀錄</h1>
 <p><strong>1.</strong><span style="color: #ff6600;">10/14 切換成2階時轉換靜態時出現404錯誤。</span></p>
 <p><span style="color: #ff6600;">解決方法:要轉2階的名稱裡不能有<strong><span style="color: #000000;">:/"</span></strong>這些符號</span></p>
@@ -17,7 +17,7 @@
 <p><span style="color: #ff6600;">SSL</span>(安全通訊協定)</p>
 <h2>FTP</h2>
 <p><span>In the OSI (Open Systems Interconnection) model, the application layer uses protocols such as trivial file transfer protocol (TFTP), file transfer protocol (FTP), and file transfer protocol secure (FTPS using TLS/SSL) to allow users to migrate data in a client-server model. FTP concerns itself with data only and as such eliminates the overhead of extraneous information such as what HTTP allows in addition to the actual data (advertisements, banners, images, etc.). This alleviates processing and bandwidth overhead and allows the client to simply retrieve the data from the server.</span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">在OSI（開放系統互連）模型中，應用程序層使用諸如簡單文件傳輸協議（TFTP），文件傳輸協議（FTP）和安全文件傳輸協議（使用TLS / SSL的FTPS）之類的協議來允許用戶遷移數據在客戶端-服務器模型中。FTP僅關注數據本身，因此消除了額外信息的開銷，例如除了實際數據（廣告，橫幅，圖像等）之外，HTTP允許的信息。這減輕了處理和帶寬開銷，並使客戶端可以簡單地從服務器檢索數據。</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">在OSI（開放系統互連）模型中，應用程序層使用諸如簡單文件傳輸協議（TFTP），文件傳輸協議（FTP）和安全文件傳輸協議（使用TLS / SSL的FTPS）之類的協議來允許用戶遷移數據在客戶端-服務器模型中。<span style="color: #000000;">FTP僅關注數據本身，因此消除了額外信息的開銷</span>，例如除了實際數據（廣告，橫幅，圖像等）之外，HTTP允許的信息。這減輕了處理和帶寬開銷，並使客戶端可以簡單地從服務器檢索數據。</span></strong></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">FTP services can be accessed using client software such as ftp.exe (provided in all Microsoft operating systems), third-party software such as Filezilla or WinSCP, and any modern/current browser. Most light-duty users outside a corporate environment will not use a client FTP (or its secure version) because web browsers can negotiate FTP as well as HTTP. Public FTP servers allow for an anonymous user name so the client can reach file directories specifically designed for public access.</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">可以使用諸如ftp.exe（在所有Microsoft操作系統中提供）之類的客戶端軟件，諸如Filezilla或WinSCP之類的第三方軟件以及任何現代/最新的瀏覽器來訪問FTP服務。公司環境之外的大多數輕型用戶都不會使用客戶端FTP（或其安全版本），因為Web瀏覽器可以協商FTP以及HTTP。公用FTP服務器允許使用匿名用戶名，以便客戶端可以訪問專門為公用訪問設計的文件目錄。</span></strong></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" style="text-align: left;"><span lang="zh-TW">These network communications are passed through the presentation layer to the session layer, where sockets and sessions are created using logical port numbers as defined by TCP or UDP. TCP is stateful, connection-oriented and reliable. UDP is stateless, connectionless, and less reliable. The combination of source and destination address coupled with the logical port number creates a network socket, which establishes the session for process-to-process communication. The material in this section is used under CC-BY license from https://en.wikipedia.org/wiki/Transport_layer.</span></p>
@@ -27,4 +27,54 @@
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">主動FTP是點對點連接，客戶端啟動該點並連接到FTP服務器端口21（用於命令）和端口20（用於數據）。這意味著服務器將主動啟動與客戶端偵聽端口的連接，並要求客戶端允許這些連接，防火牆默認情況下會阻止這些連接。被動FTP允許客戶端在端口21上啟動數據連接，然後FTP服務器將命令和數據連接移至服務器上的隨機端口（數字大於1023）。通過從客戶端發起連接，允許通過防火牆的負擔由FTP服務器管理員承擔，他可以更好地設置一系列允許連接的端口。</span></strong></p>
 <h3>Using FTP</h3>
 <p><span>Accessing FTP public servers using the command line is not nearly as user-friendly as using a web browser. However, both methods are viable and in use in corporate networks.</span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">使用命令行訪問FTP公共服務器並不像使用Web瀏覽器那樣友好。但是，這兩種方法都是可行的，並且已在公司網絡中使用。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">使用命令行訪問FTP公共服務器並不像使用Web瀏覽器那樣友好。但是，這兩種方法都是可行的，並且已在公司網絡中使用。</span></strong></p>
+<ul lang="">
+<li lang="">Open a web browser of choice<strong>（打開選擇的網絡瀏覽器）</strong></li>
+<li lang="">Use this URL: ftp.funet.fi<strong>（使用此URL：ftp.funet.fi </strong><span style="color: #ff0000;">URL:統一資源定位符<strong><span style="color: #000000;">）</span></strong></span></li>
+<li lang="">Click “pubs,” then “standards,” then “RFC”<strong>（點擊“發布”，然後點擊“標準”，然後點擊“ RFC” </strong><span style="color: #ff6600;">RFC:請求意見稿</span><strong>）</strong></li>
+<li lang="">Search RFC 959 and access either the .txt or .pdf file (left-click)<strong>（搜索RFC 959並訪問.txt或.pdf文件）</strong></li>
+<li lang="">Search RFC 4217 and access either the .txt or .pdf file (left-click)<strong>（搜索RFC 4217並訪問.txt或.pdf文件）</strong></li>
+<li lang="">If you actually needed the file you can right-click and save as.<strong>（如果您確實需要該文件，則可以右鍵單擊並另存。）</strong></li>
+</ul>
+<p><span>Now that you see the file structure, notice it is similar to navigating a local hard drive with the only difference being that you use the “/” (forward slash) instead of the “\” (backslash) because you are accessing the folders through the Internet.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">現在您已經看到文件結構，請注意，它類似於瀏覽本地硬盤驅動器，唯一的區別是您使用“ /”（正斜杠）而不是“ \”（反斜杠），因為您通過以下方式訪問文件夾互聯網。</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><em class="italic" lang="">Note: In this next step using the command-line interface, you will only be able to navigate the FTP server, and will not be able to transfer files, because ftp.exe does not support passive mode by default. You can use a command-line tool in a Linux Distro; or, in Windows, you can go to Passive-FTP.com and download the freeware.</em></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><em><strong><span lang="zh-TW">注意：在接下來的使用命令行界面的步驟中，您將只能瀏覽FTP服務器，並且將無法傳輸文件，因為ftp.exe默認情況下不支持被動模式。您可以在Linux Distro中使用命令行工具。或者，在Windows中，您可以轉到Passive-FTP.com並下載免費軟件。</span></strong></em></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><em><span lang="zh-TW"><em class="italic" lang="">However, you can create a workaround by first allowing FTP through your firewall (be sure to put firewall restrictions back in place after the exercise), and then issuing the following commands after you enter the password:</em></span></em></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><em><span lang="zh-TW"><em class="italic" lang="">但是，您可以通過首先允許FTP通過防火牆（確保在練習後將防火牆限制放回原位），然後在輸入密碼後發出以下命令來創建解決方法：</em></span></em></strong></p>
+<ul>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><em><span lang="zh-TW"><em class="italic" lang=""><span>quote pasv </span></em></span></em></strong><span lang="zh-TW" style="color: #ff0000;">引用pasv(pasv-FTP的被動模式)</span></li>
+</ul>
+<p style="text-align: center;"><span lang="zh-TW" style="color: #ff6600;"></span><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image5.png"/></p>
+<ul lang="">
+<li lang="">Now the “dir, ls” (list directory contents), and “get” (download) commands will work.</li>
+<li lang="">By default, the file will download to your user root at C:\Windows\Users\**<em class="italic" lang="">your user name</em>** or at the root of C:\ (wherever your OS is installed).</li>
+</ul>
+<ul>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">現在，“ dir，ls”（列出目錄內容）和“ get”（下載）命令將起作用。</span></strong></li>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">默認情況下，該文件將下載到您的用戶根目錄，即C:\Windows\Users\**您的用戶名**或C:\的根目錄(無論尼按裝了OS的位置)。</span></strong></li>
+</ul>
+<p><span lang="zh-TW">As a public FTP server set to passive mode, certain commands do not work and invoke the server to close the socket. If that happens, re-do your log on.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">將公共FTP服務器設置為被動模式後，某些命令將不起作用，並調用服務器以關閉網路插座。如果發生這種情況，請重新登錄。</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"></span>Use the keyboard command<span> </span><img id="_i_3" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image6.png"/><span> </span>+ r and type ftp (from an administrative command line interface you can also type ftp). The prompt changes to ftp&gt;</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">使用鍵盤命令<img id="_i_3" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image6.png"/>+ r並輸入ftp（在管理命令行界面中，您也可以輸入ftp）。提示符更改為ftp&gt;</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><img height="169" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image7.png" width="549"/></span></p>
+<ul lang="">
+<li lang="">Type “help” and look at the commands.<span style="color: #000000;"><strong>（輸入“ help”並查看命令）</strong></span></li>
+<li lang="">Type at the command prompt: open ftp.funet.fi.<span style="color: #000000;"><strong>（在命令提示符下鍵入：打開ftp.funet.fi）</strong></span></li>
+<li lang="">Follow the prompts to log on.<span style="color: #000000;"><strong>（按照提示進行登錄）</strong></span></li>
+<li lang="">Username: anonymous.<span style="color: #000000;"><strong>（用戶名：匿名）</strong></span></li>
+<li lang="">Password: any generic e-mail (such as user@user.com<a href="mailto:user@user.com)"><span style="color: #000000;">)</span></a>.<strong><span style="color: #000000;">（密碼：任何通用電子郵件）</span></strong></li>
+</ul>
+<p id="N10723" lang="">You get a welcome message and can now navigate through the directory structure you saw in the browser by typing the following commands:</p>
+<p><strong><span lang="zh-TW">您會收到一條歡迎消息，現在可以通過輸入以下命令來瀏覽瀏覽器中看到的目錄結構：</span></strong></p>
+<ul>
+<li><span lang="zh-TW"><span lang="zh-TW">pwd — lists the current directory.<strong><span style="color: #000000;">（</span></strong></span></span><strong><span style="color: #000000;">pwd-列出當前目錄。）</span></strong></li>
+</ul>
+<p style="text-align: center;"><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image8.png"/></p>
+<ul>
+<li style="text-align: left;"><span><span>cd — changes the directory. This may be in the form of:<span style="color: #000000;"><strong>（</strong></span></span></span><span style="color: #000000;"><strong>cd —更改目錄。可以採用以下形式：）</strong></span></li>
+</ul>
+<ul style="list-style-type: circle;">
+<li><span style="color: #000000;"><strong></strong></span></li>
+</ul>

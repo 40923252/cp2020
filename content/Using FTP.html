@@ -135,30 +135,64 @@ img.add_border {
         </header>
     <div id="tipue_search_content">Active vs. Passive << <a href='Active vs. Passive.html'>Previous</a> <br /><h1>Using FTP</h1>
 <p><span>Accessing FTP public servers using the command line is not nearly as user-friendly as using a web browser. However, both methods are viable and in use in corporate networks.</span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">使用命令行訪問FTP公共服務器並不像使用Web瀏覽器那樣友好。但是，這兩種方法都是可行的，並且已在公司網絡中使用。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">使用命令行訪問FTP公共服務器並不像使用Web瀏覽器那樣友好。但是，這兩種方法都是可行的，並且已在公司網絡中使用。</span></strong></p>
 <ul lang="">
-<li lang="">Open a web browser of choice</li>
-<li lang="">Use this URL: ftp.funet.fi</li>
-<li lang="">Click “pubs,” then “standards,” then “RFC”</li>
-<li lang="">Search RFC 959 and access either the .txt or .pdf file (left-click)</li>
-<li lang="">Search RFC 4217 and access either the .txt or .pdf file (left-click)</li>
-<li lang="">If you actually needed the file you can right-click and save as.</li>
-</ul>
-<p></p>
-<ul lang="">
-<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">打開選擇的網絡瀏覽器</span></strong></li>
-<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong>使用此URL：ftp.funet.fi<span style="color: #ff6600;">（URL:統一資源定位符）</span></strong></li>
-<li lang=""><strong>Click “pubs,” then “standards,” then “RFC”<span style="color: #ff6600;">（RFC:請求意見稿）</span></strong></li>
-<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong>搜索RFC 959並訪問.txt或.pdf文件（單擊鼠標左鍵）</strong></li>
-<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong>搜索RFC 4217並訪問.txt或.pdf文件（單擊鼠標左鍵）</strong></li>
-<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong>如果您確實需要該文件，則可以右鍵單擊並另存。</strong></li>
+<li lang="">Open a web browser of choice<strong>（打開選擇的網絡瀏覽器）</strong></li>
+<li lang="">Use this URL: ftp.funet.fi<strong>（使用此URL：ftp.funet.fi </strong><span style="color: #ff0000;">URL:統一資源定位符<strong><span style="color: #000000;">）</span></strong></span></li>
+<li lang="">Click “pubs,” then “standards,” then “RFC”<strong>（點擊“發布”，然後點擊“標準”，然後點擊“ RFC” </strong><span style="color: #ff6600;">RFC:請求意見稿</span><strong>）</strong></li>
+<li lang="">Search RFC 959 and access either the .txt or .pdf file (left-click)<strong>（搜索RFC 959並訪問.txt或.pdf文件）</strong></li>
+<li lang="">Search RFC 4217 and access either the .txt or .pdf file (left-click)<strong>（搜索RFC 4217並訪問.txt或.pdf文件）</strong></li>
+<li lang="">If you actually needed the file you can right-click and save as.<strong>（如果您確實需要該文件，則可以右鍵單擊並另存。）</strong></li>
 </ul>
 <p><span>Now that you see the file structure, notice it is similar to navigating a local hard drive with the only difference being that you use the “/” (forward slash) instead of the “\” (backslash) because you are accessing the folders through the Internet.</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">現在您已經看到文件結構，請注意，它類似於瀏覽本地硬盤驅動器，唯一的區別是您使用“ /”（正斜杠）而不是“ \”（反斜杠），因為您通過以下方式訪問文件夾互聯網。</span></strong></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><em class="italic" lang="">Note: In this next step using the command-line interface, you will only be able to navigate the FTP server, and will not be able to transfer files, because ftp.exe does not support passive mode by default. You can use a command-line tool in a Linux Distro; or, in Windows, you can go to Passive-FTP.com and download the freeware.</em></span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><em><strong><span lang="zh-TW">注意：在接下來的使用命令行界面的步驟中，您將只能瀏覽FTP服務器，並且將無法傳輸文件，因為ftp.exe默認情況下不支持被動模式。您可以在Linux Distro中使用命令行工具。或者，在Windows中，您可以轉到Passive-FTP.com並下載免費軟件。</span></strong></em></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><em><span lang="zh-TW"><em class="italic" lang="">However, you can create a workaround by first allowing FTP through your firewall (be sure to put firewall restrictions back in place after the exercise), and then issuing the following commands after you enter the password:</em></span></em></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><em><span lang="zh-TW"><em class="italic" lang="">但是，您可以通過首先允許FTP通過防火牆（確保在練習後將防火牆限制放回原位），然後在輸入密碼後發出以下命令來創建解決方法：</em></span></em></strong></p><br />Active vs. Passive << <a href='Active vs. Passive.html'>Previous</a> </div>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><em><span lang="zh-TW"><em class="italic" lang="">但是，您可以通過首先允許FTP通過防火牆（確保在練習後將防火牆限制放回原位），然後在輸入密碼後發出以下命令來創建解決方法：</em></span></em></strong></p>
+<ul>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><em><span lang="zh-TW"><em class="italic" lang=""><span>quote pasv </span></em></span></em></strong><span lang="zh-TW" style="color: #ff0000;">引用pasv(pasv-FTP的被動模式)</span></li>
+</ul>
+<p style="text-align: center;"><span lang="zh-TW" style="color: #ff6600;"></span><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image5.png"/></p>
+<ul lang="">
+<li lang="">Now the “dir, ls” (list directory contents), and “get” (download) commands will work.</li>
+<li lang="">By default, the file will download to your user root at C:\Windows\Users\**<em class="italic" lang="">your user name</em>** or at the root of C:\ (wherever your OS is installed).</li>
+</ul>
+<ul>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">現在，“ dir，ls”（列出目錄內容）和“ get”（下載）命令將起作用。</span></strong></li>
+<li class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">默認情況下，該文件將下載到您的用戶根目錄，即C:\Windows\Users\**您的用戶名**或C:\的根目錄(無論尼按裝了OS的位置)。</span></strong></li>
+</ul>
+<p><span lang="zh-TW">As a public FTP server set to passive mode, certain commands do not work and invoke the server to close the socket. If that happens, re-do your log on.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">將公共FTP服務器設置為被動模式後，某些命令將不起作用，並調用服務器以關閉網路插座。如果發生這種情況，請重新登錄。</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"></span>Use the keyboard command<span> </span><img id="_i_3" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image6.png"/><span> </span>+ r and type ftp (from an administrative command line interface you can also type ftp). The prompt changes to ftp&gt;</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">使用鍵盤命令<img id="_i_3" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image6.png"/>+ r並輸入ftp（在管理命令行界面中，您也可以輸入ftp）。提示符更改為ftp&gt;</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><img height="169" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image7.png" width="549"/></span></p>
+<ul lang="">
+<li lang="">Type “help” and look at the commands.<span style="color: #000000;"><strong>（輸入“ help”並查看命令）</strong></span></li>
+<li lang="">Type at the command prompt: open ftp.funet.fi.<span style="color: #000000;"><strong>（在命令提示符下鍵入：打開ftp.funet.fi）</strong></span></li>
+<li lang="">Follow the prompts to log on.<span style="color: #000000;"><strong>（按照提示進行登錄）</strong></span></li>
+<li lang="">Username: anonymous.<span style="color: #000000;"><strong>（用戶名：匿名）</strong></span></li>
+<li lang="">Password: any generic e-mail (such as user@user.com<a href="mailto:user@user.com)"><span style="color: #000000;">)</span></a>.<strong><span style="color: #000000;">（密碼：任何通用電子郵件）</span></strong></li>
+</ul>
+<p id="N10723" lang="">You get a welcome message and can now navigate through the directory structure you saw in the browser by typing the following commands:</p>
+<p><strong><span lang="zh-TW">您會收到一條歡迎消息，現在可以通過輸入以下命令來瀏覽瀏覽器中看到的目錄結構：</span></strong></p>
+<ul>
+<li><span lang="zh-TW"><span lang="zh-TW">pwd — lists the current directory.<strong><span style="color: #000000;">（</span></strong></span></span><strong><span style="color: #000000;">pwd-列出當前目錄。）</span></strong></li>
+</ul>
+<p style="text-align: center;"><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image8.png"/></p>
+<ul>
+<li style="text-align: left;"><span><span>cd — changes the directory. This may be in the form of:<span style="color: #000000;"><strong>（</strong></span></span></span><span style="color: #000000;"><strong>cd —更改目錄。可以採用以下形式：）</strong></span></li>
+</ul>
+<ul style="list-style-type: circle;">
+<li lang="">cd pub (refer to the URL path from the previous exercise), or<strong>（cd pub（請參閱上一練習中的URL路徑），或）</strong></li>
+<li lang="">cd/pub/standards/RFC/<span style="color: #000000;"><strong><br/></strong></span></li>
+</ul>
+<p style="text-align: center;"><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image9.png"/></p>
+<p><span>Now if you are using the workaround, Mac, or Linux you can download a file using the “get” command:</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">現在，如果您使用的是變通方法，Mac或Linux，則可以使用“ get”命令下載文件：</span></strong></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" style="text-align: center;"><span lang="zh-TW"><img src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH14/webcontent/PCH14/image10.png"/></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Without the passive mode workaround, a third-party FTP client, Mac, or Linux this is as far as you can go. However, in the corporate environment you might be required to troubleshoot FTP on the local intranet, which would most likely be set to active FTP. Clearly, the need for command-line FTP service is fairly limited compared to using a browser.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><strong><span lang="zh-TW">如果沒有被動模式解決方法，則只能使用第三方FTP客戶端，Mac或Linux。但是，在公司環境中，可能需要對本地Intranet上的FTP進行故障排除，這很可能會設置為活動FTP。顯然，與使用瀏覽器相比，命令行FTP服務的需求非常有限。</span></strong></p><br />Active vs. Passive << <a href='Active vs. Passive.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
