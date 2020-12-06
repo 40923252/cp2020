@@ -43,6 +43,7 @@
 <p><span style="color: #ff9900;"><span style="color: #ff9900;"><span style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff0000" style="color: #ff0000;">11/16</span><span color="#ff9900" style="color: #ff9900;"> W10:架設倉儲統整網站</span></span></span></span></span></p>
 <p><span style="color: #ff9900;"><span style="color: #ff9900;"><span style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff0000" style="color: #ff0000;">11/23</span><span color="#ff9900" style="color: #ff9900;"> Week、影片教學</span></span></span></span></span></span></p>
 <p><span style="color: #ff9900;"><span style="color: #ff9900;"><span style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff0000" style="color: #ff0000;">11/25</span><span color="#ff9900" style="color: #ff9900;"> 組員名單bg4</span></span></span></span></span></span></span></p>
+<p><span style="color: #ff9900;"><span style="color: #ff9900;"><span style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff9900" style="color: #ff9900;"><span color="#ff0000" style="color: #ff0000;">11/30</span><span color="#ff9900" style="color: #ff9900;"> 建立SSH-KEY影片上傳</span></span></span></span></span></span></span></span></p>
 <h1>Week</h1>
 <h2>W8</h2>
 <p>kaggle：<span style="text-decoration: underline; color: #0000ff;"><a href="https://www.kaggle.com/a40923252/cp2020w8" style="color: #0000ff; text-decoration: underline;">https://www.kaggle.com/a40923252/cp2020w8</a></span></p>
@@ -348,3 +349,6 @@
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW">影片網址：<span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="https://www.youtube.com/watch?v=vPlm2ETkgmc&amp;feature=emb_title" style="color: #0000ff; text-decoration: underline;">https://www.youtube.com/watch?v=vPlm2ETkgmc&amp;feature=emb_title</a></span></span></span></strong></p>
 <h1 class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">HomeWork2</span></h1>
 <p><span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="https://www.kaggle.com/a40923252/cp2020hw2" style="color: #0000ff; text-decoration: underline;">https://www.kaggle.com/a40923252/cp2020hw2</a></span></span></p>
+<p><span style="color: #0000ff;"></span>亂數分組:</p>
+<p>先從網站上抓取班級名單</p>
+<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>  cp1b.append(line.decode('utf-8'))<br/>print(cp1b)</p>
