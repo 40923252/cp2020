@@ -363,3 +363,12 @@
 <p>試做整合</p>
 <p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/> cp1b.append(int(line.decode('utf-8').rstrip()))<br/>from random import shuffle<br/>shuffle(cp1b)<br/>n = 5<br/>m = int(len(cp1b)/n)<br/>list2 = []<br/>for i in range(0,len(cp1b),m):<br/> list2.append(cp1b[i:i+m])<br/>print(list2)</p>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span></span>[[40923243, 40923250, 40923205, 40923245, 40923220, 40723217, 40728238, 40923208, 40923248, 40923209, 40923238], [40923240, 40923217, 40923201, 40923204, 40923212, 40923229, 40923219, 40923202, 40923227, 40923233, 40923234], [40923242, 40923211, 40923223, 40923231, 40923224, 40923207, 40923226, 40923253, 40823148, 40923232, 40923247], [40523148, 40523138, 40923213, 40923252, 40823152, 40923249, 40923228, 40923235, 40923218, 40923241, 40923206], [40923251, 40923239, 40923216, 40923203, 40923214, 40923237, 40923225, 40923230, 40923210, 40923244, 40923221], [40923236, 40923246]]</p>
+<h1>HomeWork3</h1>
+<p>31、Hangman</p>
+<p>word = "EVAPORATE"<br/>guessWord = "_" * len(word)</p>
+<p>word = list(word)<br/>guessWord = list(guessWord)</p>
+<p>guessedList = []</p>
+<p>print('Guess a letter : ')<br/>print("_ "*(len(word)))</p>
+<p>while True:<br/> guessLetter = input()<br/> guessLetter = guessLetter.upper()</p>
+<p>if guessLetter in guessedList:<br/> print('Already guessed!')<br/>else:<br/> guessedList.append(guessLetter)<br/> for i in range(len(word)):<br/> if guessLetter in word[i]:<br/> guessWord[i] = guessLetter</p>
+<p>if "_" not in guessWord:<br/> print('You Win!')<br/> print(' '.join(guessWord))<br/> break<br/>print(' '.join(guessWord))<br/>print('Guess a letter : ')</p>
