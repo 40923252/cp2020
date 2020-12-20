@@ -17,9 +17,9 @@ if guessLetter in guessedList:
     print('Already guessed!')
 else:
     guessedList.append(guessLetter)
-    for i in range(len(word)):
-        if guessLetter in word[i]:
-            guessWord[i] = guessLetter
+for i in range(len(word)):
+    if guessLetter in word[i]:
+        guessWord[i] = guessLetter
 
 if "_" not in guessWord:
     print('You Win!')
