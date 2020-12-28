@@ -761,3 +761,6 @@ if __name__ == '__main__':
 		print("Congratulations! You correctly guessed the word {}".format(WORD))
 	else:
 		print("Sorry, you list! Your word was {}".format(WORD))</pre>
+<h3>程式試打</h3>
+<p>secret_word = "hangman"<br/>guess = ""<br/>guess_count = 0<br/>guess_limit = 3<br/>out_of_guesses = False</p>
+<p>while guess != secret_word and not(out_of_guesses):<br/>    if guess_count &lt; guess_limit:<br/>        guess = input("Enter guess: ")<br/>        guess_count +=1<br/>    else:<br/>        out_of_guesses = True<br/> <br/>if out_of_guesses:<br/>    print("Out of Guesses, You LOSE")<br/>else:<br/>    print("You win!")</p>
