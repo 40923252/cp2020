@@ -369,6 +369,44 @@
 <p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/> cp1b.append(int(line.decode('utf-8').rstrip()))<br/>from random import shuffle<br/>shuffle(cp1b)<br/>n = 5<br/>m = int(len(cp1b)/n)<br/>list2 = []<br/>for i in range(0,len(cp1b),m):<br/> list2.append(cp1b[i:i+m])<br/>print(list2)</p>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span></span>[[40923243, 40923250, 40923205, 40923245, 40923220, 40723217, 40728238, 40923208, 40923248, 40923209, 40923238], [40923240, 40923217, 40923201, 40923204, 40923212, 40923229, 40923219, 40923202, 40923227, 40923233, 40923234], [40923242, 40923211, 40923223, 40923231, 40923224, 40923207, 40923226, 40923253, 40823148, 40923232, 40923247], [40523148, 40523138, 40923213, 40923252, 40823152, 40923249, 40923228, 40923235, 40923218, 40923241, 40923206], [40923251, 40923239, 40923216, 40923203, 40923214, 40923237, 40923225, 40923230, 40923210, 40923244, 40923221], [40923236, 40923246]]</p>
 <h1>HomeWork3</h1>
+<h2>Exercise17</h2>
+<p>Decode A Web Page<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></p>
+<p>This is the first 4-chili exercise of this blog! We’ll see what people think, and decide whether or not to continue with 4-chili exercises in the future.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">這是此博客的第一個4辣椒練習！我們將了解人們的想法，並決定將來是否繼續進行4辣椒練習。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr">Exercise 17（and Solution）</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span>Use the </span><code class="highlighter-rouge">BeautifulSoup</code><span><span> </span>and<span> </span></span><code class="highlighter-rouge">requests</code><span><span> </span>Python packages to print out a list of all the article titles on the<span> </span></span><a href="http://www.nytimes.com/">New York Times homepage</a><span>.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">使用BeautifulSoup並請求Python程序包在《紐約時報》首頁上打印所有文章標題的列表。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">Discussion</span></p>
+<p>Concepts for this week: （本週的概念）</p>
+<ul>
+<li>Libraries</li>
+<li><code class="highlighter-rouge">requests</code></li>
+<li><code class="highlighter-rouge">BeautifulSoup</code></li>
+</ul>
+<p>Libraries</p>
+<p><span>Many people have written libraries in Python that do not come with the standard distribution of Python (like the </span><code class="highlighter-rouge">random</code><span><span> </span>library mentioned<span> </span></span><a href="https://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html">in a previous post</a><span>). These libraries can do anything from machine learning to date and time formatting to meme generation. If you have a task you need done, most likely someone has written a library for it.</span></p>
+<p><span>許多人都使用Python編寫了一些庫，這些庫不是Python的標準發行版所附帶的（例如前一篇文章中提到的隨機庫）。這些庫可以執行從機器學習到日期和時間格式化到模因生成的所有操作。如果您有需要完成的任務，很可能有人為它編寫了一個庫。</span></p>
+<p>There are three main things to keep in mind when using a library:</p>
+<ol>
+<li>You need to install it. Installation in GNU/Linux based systems will generally be easier than on Windows or OSX, but there will always be documentation for how to do it.</li>
+<li>You need to import it. At the top of your program, make sure you write the line<span> </span><code class="highlighter-rouge">import requests</code>, or whatever the name of your library is. Then you can use it to your heart’s content.</li>
+<li>You need to read documentation. Someone else wrote it, so the rules might not be so obvious. Anyone (or any group) that writes a Python package writes documentation for it. Eventually, reading documentation will become second nature.</li>
+</ol>
+<p>There are three main things to keep in mind when using a library:</p>
+<ol>
+<li>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您需要安裝它。與Windows或OSX相比，在基於GNU / Linux的系統上的安裝通常會更容易，但是始終會有有關如何執行此操作的文檔。 您需要導入它。</span></p>
+</li>
+<li>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">在程序的頂部，請確保您編寫了行導入請求，或者您的庫名稱是什麼。然後，您可以使用它來滿足您的需求。</span></p>
+</li>
+<li>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您需要閱讀文檔。有人寫的，所以規則可能不那麼明顯。編寫Python程序包的任何人（或任何小組）都會為其編寫文檔。最終，閱讀文檔將成為第二天性。</span></p>
+</li>
+</ol>
+<p><span lang="zh-TW">Requests</span></p>
+<p><span lang="zh-TW"><span>One of the most useful libraries written for Python recently, </span><a href="http://docs.python-requests.org/en/latest/">requests</a><span><span> </span>does “HTTP for humans.” What this means in laymen’s terms is that it asks the internet things from Python. When you type “</span><a class="vglnk" href="http://facebook.com/" rel="nofollow"><span>facebook</span><span>.</span><span>com</span></a><span>” into the browser, you are asking the internet to show you Facebook’s homepage.</span></span></p>
+<p><span lang="zh-TW"><span>最近為Python編寫的最有用的庫之一，請求執行“人類HTTP”。用外行的話來說，這意味著它向Python詢問互聯網問題。在瀏覽器中輸入“ facebook.com”時，您是在要求互聯網顯示Facebook主頁。</span></span></p>
 <h2>Exercise31</h2>
 <p>Guess Letters<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/>(猜字母)</p>
 <p>Exercise 31（and <span style="text-decoration: underline; color: #0000ff;"><a href="https://www.practicepython.org/solution/2017/01/08/31-guess-letters-solutions.html" style="color: #0000ff; text-decoration: underline;">Solution</a></span>）<br/>練習31（解答）</p>
@@ -640,3 +678,86 @@ E _ _ _ _ _ _ _ E
 </div>
 </div>
 <p>And here’s my solution, making more heavy use of functions:</p>
+<p>這是我的解決方案，更多地使用了功能：</p>
+<pre>"""
+Practice Python exercise 32
+Hangman
+http://www.practicepython.org/exercise/2017/01/10/32-hangman.html
+"""
+
+import random
+
+def pick_random_word():
+	"""
+	This function picks a random word from the SOWPODS
+	dictionary. 
+	"""
+	# open the sowpods dictionary
+	with open("sowpods.txt", 'r') as f:
+		words = f.readlines()
+
+	# generate a random index
+	# -1 because len(words) is not a valid index into the list `words`
+	index = random.randint(0, len(words) - 1)
+
+	# print out the word at that index
+	word = words[index].strip()
+	return word
+
+
+def ask_user_for_next_letter():
+	letter = input("Guess your letter: ")
+	return letter.strip().upper()
+
+
+def generate_word_string(word, letters_guessed):
+	output = []
+	for letter in word:
+		if letter in letters_guessed:
+			output.append(letter.upper())
+		else:
+			output.append("_")
+	return " ".join(output)
+
+
+if __name__ == '__main__':
+	WORD = pick_random_word()
+
+	letters_to_guess = set(WORD)
+	correct_letters_guessed = set()
+	incorrect_letters_guessed = set()
+	num_guesses = 0
+
+	print("Welcome to Hangman!")
+	while (len(letters_to_guess) &gt; 0) and num_guesses &lt; 6:
+		guess = ask_user_for_next_letter()
+
+		# check if we already guessed that
+		# letter
+		if guess in correct_letters_guessed or \
+				guess in incorrect_letters_guessed:
+			# print out a message
+			print("You already guessed that letter.")
+			continue
+
+		# if the guess was correct
+		if guess in letters_to_guess:
+			# update the letters_to_guess
+			letters_to_guess.remove(guess)
+			# update the correct letters guessed
+			correct_letters_guessed.add(guess)
+		else:
+			incorrect_letters_guessed.add(guess)
+			# only update the number of guesses
+			# if you guess incorrectly
+			num_guesses += 1
+
+		word_string = generate_word_string(WORD, correct_letters_guessed)
+		print(word_string)
+		print("You have {} guesses left".format(6 - num_guesses))
+
+	# tell the user they have won or lost
+	if num_guesses &lt; 6:
+		print("Congratulations! You correctly guessed the word {}".format(WORD))
+	else:
+		print("Sorry, you list! Your word was {}".format(WORD))</pre>
