@@ -365,7 +365,7 @@
 <p><span></span><span>from random import shuffle #random(亂數) #shuffle<br/>list = [40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]<br/>shuffle(list)<br/>n = 5<br/>m = int(len(list)/n)<br/>list2 = []<br/>for i in range(0, len(list),m):<br/>    list2.append(list[i:i+m])<br/>print(list2)<br/></span></p>
 <p><span><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[[40923211, 40923242, 40923239, 40923250, 40923253, 40923210, 40923226, 40923240, 40923243, 40923225, 40923219], [40923218, 40923251, 40523148, 40923208, 40923214, 40923213, 40923207, 40523138, 40923224, 40823152, 40923232], [40923249, 40923234, 40923252, 40923245, 40923221, 40923203, 40923220, 40923205, 40923206, 40923238, 40923212], [40923228, 40923209, 40923204, 40923231, 40923216, 40823148, 40923244, 40923233, 40923246, 40923237, 40923230], [40923202, 40923223, 40923236, 40923247, 40923229, 40923201, 40728238, 40723217, 40923217, 40923227, 40923241], [40923248, 40923235]]<br/></span></span></p>
 <hr/>
-<p>試做整合</p>
+<p>試作整合</p>
 <p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(int(line.decode('utf-8').rstrip()))<br/>from random import shuffle<br/>shuffle(cp1b)<br/>n = 5<br/>m = int(len(cp1b)/n)<br/>list2 = []<br/>for i in range(0,len(cp1b),m):<br/>    list2.append(cp1b[i:i+m])<br/>print(list2)</p>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span></span>[[40923243, 40923250, 40923205, 40923245, 40923220, 40723217, 40728238, 40923208, 40923248, 40923209, 40923238], [40923240, 40923217, 40923201, 40923204, 40923212, 40923229, 40923219, 40923202, 40923227, 40923233, 40923234], [40923242, 40923211, 40923223, 40923231, 40923224, 40923207, 40923226, 40923253, 40823148, 40923232, 40923247], [40523148, 40523138, 40923213, 40923252, 40823152, 40923249, 40923228, 40923235, 40923218, 40923241, 40923206], [40923251, 40923239, 40923216, 40923203, 40923214, 40923237, 40923225, 40923230, 40923210, 40923244, 40923221], [40923236, 40923246]]</p>
 <h1>HomeWork3</h1>
@@ -480,197 +480,53 @@ E _ _ _ _ _ _ _ E
 <h3 id="sample-solution">Sample Solution(示例解決方案)</h3>
 <p>Here is a sample solution from a reader that uses the solutions to Parts 1 and 2, and just puts them on one file:</p>
 <p>這是來自讀者的示例解決方案，使用了第1部分和第2部分的解決方案，並將它們放在一個文件中：</p>
+<p>import random</p>
+<p></p>
+<p>def choose_random_word():</p>
+<p>    words=[]</p>
+<p>    with open('sowpods.txt', 'r') as file:</p>
+<p>        line = file.readline()</p>
+<p>        while line:</p>
+<p>            words.append(line.replace("\n","".strip()))</p>
+<p>            line = file.readline()</p>
+<p>        choice=words[random.randint(0,len(words)-1)]</p>
+<p>        return choice</p>
+<p></p>
+<p>print("Welcome to Hangman!")</p>
+<p>secret_word=choose_random_word()</p>
+<p>dashes=list(secret_word)</p>
+<p>display_list=[]</p>
+<p>for i in dashes:</p>
+<p>    display_list.append("_")</p>
+<p>count=len(secret_word)</p>
+<p>guesses=0</p>
+<p>letter = 0</p>
+<p>used_list=[]</p>
+<p>while count != 0 and letter != "exit":</p>
+<p>    print<span>(" ".join(display_list))</span></p>
+<p>    <span>letter=input("Guess your letter: ")</span></p>
+<p></p>
+<p>    <span>if letter.upper() in used_list:</span></p>
+<p>        <span>print("Oops! Already guessed that letter.")</span></p>
+<p>    <span>else:</span></p>
+<p>        <span>for i in range(0,len(secret_word)):</span></p>
+<p>            <span>if letter.upper() == secret_word[i]:</span></p>
+<p>                <span>display_list[i]=letter.upper()</span></p>
+<p>                <span>count -= 1</span></p>
+<p><span>        guesses +=1</span></p>
+<p><span>    used_list.append(letter.upper())</span></p>
+<p><span></span></p>
+<p><span>if letter == "exit":</span></p>
+<p><span>    print("Thanks!")</span></p>
+<p><span>else:</span></p>
+<p><span>    print(" ".join(display_list))</span></p>
+<p><span>    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)</span></p>
 <div class="gist" id="gist43489631">
 <div class="gist-file">
 <div class="gist-data">
 <div class="js-gist-file-update-container js-task-list-container file-box">
 <div class="file my-2" id="file-guess-letters-solution">
-<div class="Box-body p-0 blob-wrapper data type-text" itemprop="text">
-<table class="highlight tab-size js-file-line-container" data-paste-markdown-skip="" data-tab-size="8">
-<tbody>
-<tr>
-<td class="blob-num js-line-number" data-line-number="1" id="file-guess-letters-solution-L1">1</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC1">import random</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="2" id="file-guess-letters-solution-L2">2</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC2"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="3" id="file-guess-letters-solution-L3">3</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC3">def choose_random_word():</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="4" id="file-guess-letters-solution-L4">4</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC4">words=[]</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="5" id="file-guess-letters-solution-L5">5</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC5">with open('sowpods.txt', 'r') as file:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="6" id="file-guess-letters-solution-L6">6</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC6">line = file.readline()</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="7" id="file-guess-letters-solution-L7">7</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC7">while line:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="8" id="file-guess-letters-solution-L8">8</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC8">words.append(line.replace("\n","".strip()))</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="9" id="file-guess-letters-solution-L9">9</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC9">line = file.readline()</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="10" id="file-guess-letters-solution-L10">10</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC10">choice=words[random.randint(0,len(words)-1)]</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="11" id="file-guess-letters-solution-L11">11</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC11">return choice</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="12" id="file-guess-letters-solution-L12">12</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC12"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="13" id="file-guess-letters-solution-L13">13</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC13"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="14" id="file-guess-letters-solution-L14">14</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC14"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="15" id="file-guess-letters-solution-L15">15</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC15"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="16" id="file-guess-letters-solution-L16">16</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC16"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="17" id="file-guess-letters-solution-L17">17</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC17">print("Welcome to Hangman!")</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="18" id="file-guess-letters-solution-L18">18</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC18">secret_word=choose_random_word()</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="19" id="file-guess-letters-solution-L19">19</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC19">dashes=list(secret_word)</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="20" id="file-guess-letters-solution-L20">20</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC20">display_list=[]</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="21" id="file-guess-letters-solution-L21">21</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC21">for i in dashes:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="22" id="file-guess-letters-solution-L22">22</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC22">display_list.append("_")</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="23" id="file-guess-letters-solution-L23">23</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC23">count=len(secret_word)</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="24" id="file-guess-letters-solution-L24">24</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC24">guesses=0</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="25" id="file-guess-letters-solution-L25">25</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC25">letter = 0</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="26" id="file-guess-letters-solution-L26">26</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC26">used_list=[]</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="27" id="file-guess-letters-solution-L27">27</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC27">while count != 0 and letter != "exit":</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="28" id="file-guess-letters-solution-L28">28</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC28">print(" ".join(display_list))</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="29" id="file-guess-letters-solution-L29">29</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC29">letter=input("Guess your letter: ")</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="30" id="file-guess-letters-solution-L30">30</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC30"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="31" id="file-guess-letters-solution-L31">31</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC31">if letter.upper() in used_list:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="32" id="file-guess-letters-solution-L32">32</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC32">print("Oops! Already guessed that letter.")</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="33" id="file-guess-letters-solution-L33">33</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC33">else:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="34" id="file-guess-letters-solution-L34">34</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC34">for i in range(0,len(secret_word)):</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="35" id="file-guess-letters-solution-L35">35</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC35">if letter.upper() == secret_word[i]:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="36" id="file-guess-letters-solution-L36">36</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC36">display_list[i]=letter.upper()</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="37" id="file-guess-letters-solution-L37">37</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC37">count -= 1</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="38" id="file-guess-letters-solution-L38">38</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC38">guesses +=1</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="39" id="file-guess-letters-solution-L39">39</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC39">used_list.append(letter.upper())</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="40" id="file-guess-letters-solution-L40">40</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC40"></td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="41" id="file-guess-letters-solution-L41">41</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC41">if letter == "exit":</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="42" id="file-guess-letters-solution-L42">42</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC42">print("Thanks!")</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="43" id="file-guess-letters-solution-L43">43</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC43">else:</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="44" id="file-guess-letters-solution-L44">44</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC44">print(" ".join(display_list))</td>
-</tr>
-<tr>
-<td class="blob-num js-line-number" data-line-number="45" id="file-guess-letters-solution-L45">45</td>
-<td class="blob-code blob-code-inner js-file-line" id="file-guess-letters-solution-LC45">print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="Box-body p-0 blob-wrapper data type-text" itemprop="text"></div>
 </div>
 </div>
 </div>
