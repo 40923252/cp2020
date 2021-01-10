@@ -144,6 +144,19 @@ for line in urllib.request.urlopen(target_url):
     cp1b.append(line.decode('utf-8'))
 print(cp1b)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;&gt;</span>['40523138\n', '40523148\n', '40723217\n', '40728238\n', '40823148\n', '40823152\n', '40923201\n', '40923202\n', '40923203\n', '40923204\n', '40923205\n', '40923206\n', '40923207\n', '40923208\n', '40923209\n', '40923210\n', '40923211\n', '40923212\n', '40923213\n', '40923214\n', '40923216\n', '40923217\n', '40923218\n', '40923219\n', '40923220\n', '40923221\n', '40923223\n', '40923224\n', '40923225\n', '40923226\n', '40923227\n', '40923228\n', '40923229\n', '40923230\n', '40923231\n', '40923232\n', '40923233\n', '40923234\n', '40923235\n', '40923236\n', '40923237\n', '40923238\n', '40923239\n', '40923240\n', '40923241\n', '40923242\n', '40923243\n', '40923244\n', '40923245\n', '40923246\n', '40923247\n', '40923248\n', '40923249\n', '40923250\n', '40923251\n', '40923252\n', '40923253\n']</p>
+<p>1.導入Python模組取得URL資料</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request</pre>
+<p>2.設定要打開的URL</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"</pre>
+<p>3.設定數列</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cp1b = []</pre>
+<p>4.設定</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for line in urllib.request.urlopen(target_url):
+
+    cp1b.append(line.decode('utf-8'))</pre>
+<p class="line number4 index3 alt1">5.印出cp1b數列</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(cp1b)</pre>
+<p class="line number4 index3 alt1"></p>
 <hr/>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
 target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"

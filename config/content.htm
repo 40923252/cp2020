@@ -16,6 +16,7 @@
 <p><span style="color: #ff6600;"><span style="color: #ff6600;"><span><span style="color: #ff6600;"><span>                   Setting up a Network(</span></span></span></span></span><span lang="zh-TW" style="color: #ff6600;">建立網絡</span><span style="color: #ff6600;"><span style="color: #ff6600;"><span><span style="color: #ff6600;"><span><span style="color: #ff6600;"><span>)</span></span></span></span></span></span></span></p>
 <p><span style="color: #ff6600;"><span style="color: #ff6600;"><span><span style="color: #ff6600;"><span></span></span></span></span></span>期末心得：</p>
 <p>剛開始接觸到計算機程式時，很期待這堂課能帶給我的知識，因為這是我非常想學習的課程。剛觸碰Python程式語言時，什麼都看不懂，但是我沒有自暴自棄，除了上課時間努力學習之外，我還運用了許多課餘時間來去找資料，增加自己的能力，漸漸地從一開始懵懂無知到現在略懂皮毛，希望未來能夠更深入的學習程式語言。謝謝老師這學期用心的教導我們。</p>
+<p>自評分數:75</p>
 <h1>組員名單bg4</h1>
 <p><strong>組長:</strong></p>
 <p><strong><span style="background-color: #ff99cc;">40923252 魏柏旻</span></strong><br/><strong>CMSiMDE：</strong><span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="https://40923252.github.io/cp2020/content/index.html" style="color: #0000ff; text-decoration: underline;">https://40923252.github.io/cp2020/content/index.html</a></span></span><br/><strong>Github：</strong><span style="text-decoration: underline; color: #0000ff;"><a href="https://github.com/40923252/cp2020" style="color: #0000ff; text-decoration: underline;">https://github.com/40923252/cp2020</a></span></p>
@@ -368,6 +369,19 @@ for line in urllib.request.urlopen(target_url):
     cp1b.append(line.decode('utf-8'))
 print(cp1b)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;&gt;</span>['40523138\n', '40523148\n', '40723217\n', '40728238\n', '40823148\n', '40823152\n', '40923201\n', '40923202\n', '40923203\n', '40923204\n', '40923205\n', '40923206\n', '40923207\n', '40923208\n', '40923209\n', '40923210\n', '40923211\n', '40923212\n', '40923213\n', '40923214\n', '40923216\n', '40923217\n', '40923218\n', '40923219\n', '40923220\n', '40923221\n', '40923223\n', '40923224\n', '40923225\n', '40923226\n', '40923227\n', '40923228\n', '40923229\n', '40923230\n', '40923231\n', '40923232\n', '40923233\n', '40923234\n', '40923235\n', '40923236\n', '40923237\n', '40923238\n', '40923239\n', '40923240\n', '40923241\n', '40923242\n', '40923243\n', '40923244\n', '40923245\n', '40923246\n', '40923247\n', '40923248\n', '40923249\n', '40923250\n', '40923251\n', '40923252\n', '40923253\n']</p>
+<p>1.導入Python模組取得URL資料</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request</pre>
+<p>2.設定要打開的URL</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"</pre>
+<p>3.設定數列</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cp1b = []</pre>
+<p>4.設定</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for line in urllib.request.urlopen(target_url):
+
+    cp1b.append(line.decode('utf-8'))</pre>
+<p class="line number4 index3 alt1">5.印出cp1b數列</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(cp1b)</pre>
+<p class="line number4 index3 alt1"></p>
 <hr/>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
 target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
