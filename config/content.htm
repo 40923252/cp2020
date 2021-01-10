@@ -356,36 +356,66 @@
 <p><span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="https://www.kaggle.com/a40923252/cp2020hw2" style="color: #0000ff; text-decoration: underline;">https://www.kaggle.com/a40923252/cp2020hw2</a></span></span></p>
 <p><span style="color: #0000ff;"></span>亂數分組:</p>
 <p>先從網站上抓取班級名單</p>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(line.decode('utf-8'))<br/>print(cp1b)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(line.decode('utf-8'))
+print(cp1b)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;&gt;</span>['40523138\n', '40523148\n', '40723217\n', '40728238\n', '40823148\n', '40823152\n', '40923201\n', '40923202\n', '40923203\n', '40923204\n', '40923205\n', '40923206\n', '40923207\n', '40923208\n', '40923209\n', '40923210\n', '40923211\n', '40923212\n', '40923213\n', '40923214\n', '40923216\n', '40923217\n', '40923218\n', '40923219\n', '40923220\n', '40923221\n', '40923223\n', '40923224\n', '40923225\n', '40923226\n', '40923227\n', '40923228\n', '40923229\n', '40923230\n', '40923231\n', '40923232\n', '40923233\n', '40923234\n', '40923235\n', '40923236\n', '40923237\n', '40923238\n', '40923239\n', '40923240\n', '40923241\n', '40923242\n', '40923243\n', '40923244\n', '40923245\n', '40923246\n', '40923247\n', '40923248\n', '40923249\n', '40923250\n', '40923251\n', '40923252\n', '40923253\n']</p>
 <hr/>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(int(line.decode('utf-8').rstrip())) <br/>print(cp1b)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(int(line.decode('utf-8').rstrip())) 
+print(cp1b)
+</pre>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]</span></p>
 <hr/>
-<p><span></span><span>from random import shuffle #random(亂數) #shuffle<br/>list = [40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]<br/>shuffle(list)<br/>n = 5<br/>m = int(len(list)/n)<br/>list2 = []<br/>for i in range(0, len(list),m):<br/>    list2.append(list[i:i+m])<br/>print(list2)<br/></span></p>
-<p><span><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[[40923211, 40923242, 40923239, 40923250, 40923253, 40923210, 40923226, 40923240, 40923243, 40923225, 40923219], [40923218, 40923251, 40523148, 40923208, 40923214, 40923213, 40923207, 40523138, 40923224, 40823152, 40923232], [40923249, 40923234, 40923252, 40923245, 40923221, 40923203, 40923220, 40923205, 40923206, 40923238, 40923212], [40923228, 40923209, 40923204, 40923231, 40923216, 40823148, 40923244, 40923233, 40923246, 40923237, 40923230], [40923202, 40923223, 40923236, 40923247, 40923229, 40923201, 40728238, 40723217, 40923217, 40923227, 40923241], [40923248, 40923235]]<br/></span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from random import shuffle #random(亂數) #shuffle
+list = [40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]
+shuffle(list)
+n = 5
+m = int(len(list)/n)
+list2 = []
+for i in range(0, len(list),m):
+    list2.append(list[i:i+m])
+print(list2)</pre>
+<p><span></span><span><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[[40923211, 40923242, 40923239, 40923250, 40923253, 40923210, 40923226, 40923240, 40923243, 40923225, 40923219], [40923218, 40923251, 40523148, 40923208, 40923214, 40923213, 40923207, 40523138, 40923224, 40823152, 40923232], [40923249, 40923234, 40923252, 40923245, 40923221, 40923203, 40923220, 40923205, 40923206, 40923238, 40923212], [40923228, 40923209, 40923204, 40923231, 40923216, 40823148, 40923244, 40923233, 40923246, 40923237, 40923230], [40923202, 40923223, 40923236, 40923247, 40923229, 40923201, 40728238, 40723217, 40923217, 40923227, 40923241], [40923248, 40923235]]<br/></span></span></p>
 <hr/>
 <p>試作整合</p>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(int(line.decode('utf-8').rstrip()))<br/>from random import shuffle<br/>shuffle(cp1b)<br/>n = 5<br/>m = int(len(cp1b)/n)<br/>list2 = []<br/>for i in range(0,len(cp1b),m):<br/>    list2.append(cp1b[i:i+m])<br/>print(list2)</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(int(line.decode('utf-8').rstrip()))
+from random import shuffle
+shuffle(cp1b)
+n = 5
+m = int(len(cp1b)/n)
+list2 = []
+for i in range(0,len(cp1b),m):
+    list2.append(cp1b[i:i+m])
+print(list2)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span></span>[[40923243, 40923250, 40923205, 40923245, 40923220, 40723217, 40728238, 40923208, 40923248, 40923209, 40923238], [40923240, 40923217, 40923201, 40923204, 40923212, 40923229, 40923219, 40923202, 40923227, 40923233, 40923234], [40923242, 40923211, 40923223, 40923231, 40923224, 40923207, 40923226, 40923253, 40823148, 40923232, 40923247], [40523148, 40523138, 40923213, 40923252, 40823152, 40923249, 40923228, 40923235, 40923218, 40923241, 40923206], [40923251, 40923239, 40923216, 40923203, 40923214, 40923237, 40923225, 40923230, 40923210, 40923244, 40923221], [40923236, 40923246]]</p>
 <h1>HomeWork3</h1>
 <h2>Exercise17</h2>
 <p>Decode A Web Page<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/>（解碼網頁）</p>
-<p>This is the first 4-chili exercise of this blog! We’ll see what people think, and decide whether or not to continue with 4-chili exercises in the future.</p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">這是此博客的第一個4辣椒練習！我們將了解人們的想法，並決定將來是否繼續進行4辣椒練習。</span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr">Exercise 17（and Solution）</p>
+<p></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr">Exercise 17（and <span style="text-decoration: underline; color: #0000ff;"><a href="https://www.practicepython.org/solution/2014/07/10/17-decode-a-web-page-solutions.html" style="color: #0000ff; text-decoration: underline;">Solution</a></span>）</p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span>Use the </span><code class="highlighter-rouge">BeautifulSoup</code><span><span> </span>and<span> </span></span><code class="highlighter-rouge">requests</code><span><span> </span>Python packages to print out a list of all the article titles on the<span> </span></span><a href="http://www.nytimes.com/">New York Times homepage</a><span>.</span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">使用BeautifulSoup並請求Python程序包在《紐約時報》首頁上打印所有文章標題的列表。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW" style="color: #ff0000;">使用<strong>BeautifulSoup</strong>並請求Python程序包在《紐約時報》首頁上打印所有文章標題的列表。</span></p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">Discussion</span></p>
 <p>Concepts for this week: （本週的概念）</p>
 <ul>
-<li>Libraries</li>
+<li><code>Libraries</code></li>
 <li><code class="highlighter-rouge">requests</code></li>
 <li><code class="highlighter-rouge">BeautifulSoup</code></li>
 </ul>
-<p>Libraries</p>
+<p><strong><span style="background-color: #ffff99;">Libraries</span></strong></p>
 <p><span>Many people have written libraries in Python that do not come with the standard distribution of Python (like the </span><code class="highlighter-rouge">random</code><span><span> </span>library mentioned<span> </span></span><a href="https://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html">in a previous post</a><span>). These libraries can do anything from machine learning to date and time formatting to meme generation. If you have a task you need done, most likely someone has written a library for it.</span></p>
-<p><span>許多人都使用Python編寫了一些庫，這些庫不是Python的標準發行版所附帶的（例如前一篇文章中提到的隨機庫）。這些庫可以執行從機器學習到日期和時間格式化到模因生成的所有操作。如果您有需要完成的任務，很可能有人為它編寫了一個庫。</span></p>
+<p><span>許多人都使用Python編寫了一些資料庫，這些資料庫不是Python的標準發行版所附帶的（例如前一篇文章中提到的隨機資料庫）。這些資料庫可以執行從機器學習到日期和時間格式化到模因生成的所有操作。如果您有需要完成的任務，很可能有人為它編寫了一個資料庫。</span></p>
 <p>There are three main things to keep in mind when using a library:</p>
 <ol>
 <li>You need to install it. Installation in GNU/Linux based systems will generally be easier than on Windows or OSX, but there will always be documentation for how to do it.</li>
@@ -398,15 +428,52 @@
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您需要安裝它。與Windows或OSX相比，在基於GNU / Linux的系統上的安裝通常會更容易，但是始終會有有關如何執行此操作的文檔。 您需要導入它。</span></p>
 </li>
 <li>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">在程序的頂部，請確保您編寫了行導入請求，或者您的庫名稱是什麼。然後，您可以使用它來滿足您的需求。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">在程序的頂部，請確保您編寫了一行導入請求，或者輸入您的資料庫名稱是什麼。然後，您可以使用它來滿足您的需求。</span></p>
 </li>
 <li>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您需要閱讀文檔。有人寫的，所以規則可能不那麼明顯。編寫Python程序包的任何人（或任何小組）都會為其編寫文檔。最終，閱讀文檔將成為第二天性。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您需要閱讀文件資料。其他人也會編寫，所以規則可能不那麼明顯。編寫Python程序包的任何人（或任何小組）都會為其編寫文檔。最終，閱讀文件資料將成為習慣。</span></p>
 </li>
 </ol>
-<p><span lang="zh-TW">Requests</span></p>
+<p><strong><span lang="zh-TW" style="background-color: #ffff99;">Requests</span></strong></p>
 <p><span lang="zh-TW"><span>One of the most useful libraries written for Python recently, </span><a href="http://docs.python-requests.org/en/latest/">requests</a><span><span> </span>does “HTTP for humans.” What this means in laymen’s terms is that it asks the internet things from Python. When you type “</span><a class="vglnk" href="http://facebook.com/" rel="nofollow"><span>facebook</span><span>.</span><span>com</span></a><span>” into the browser, you are asking the internet to show you Facebook’s homepage.</span></span></p>
-<p><span lang="zh-TW"><span>最近為Python編寫的最有用的庫之一，請求執行“人類HTTP”。用外行的話來說，這意味著它向Python詢問互聯網問題。在瀏覽器中輸入“ facebook.com”時，您是在要求互聯網顯示Facebook主頁。</span></span></p>
+<p><span lang="zh-TW"><span>最近Python編寫的最有用的資料庫之一為，請求執行“人類HTTP”。用外行的話來說，這意味著它向Python詢問互聯網問題。在瀏覽器中輸入“ facebook.com”時，您是在要求互聯網顯示Facebook主頁。</span></span></p>
+<p><span lang="zh-TW"><span>In the same way, a program can ask the internet something. It might not be “show me Facebook”, but you can for example ask Github for a list of all the repositories that the user “mprat” has. You can do this with an <span style="color: #ff0000;">API (Application Programming Interface)</span>. This exercise doesn’t use APIs, so we’ll talk more about those in a later post.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">同樣，程序可以向互聯網詢問一些信息。它可能不是“向我顯示Facebook”，但是例如，您可以要求Github提供用戶“ mprat”擁有的所有存儲庫的列表。您可以使用<span style="color: #ff0000;">API（應用程式介面）</span>來執行此操作。本練習不使用應用程式介面，因此我們將在以後的文章中進一步討論。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Back to showing the user a webpage. When I type “</span><a class="vglnk" href="http://facebook.com/" rel="nofollow"><span>facebook</span><span>.</span><span>com</span></a><span>” into the browser, Facebook sends my browser a bunch of HTML (basically, code for how the website looks). The browser then takes this HTML and shows it to me in a pretty way. (Fun fact: to see the HTML of any page in a browser, right click on the page and “Inspect Element” or “View Source” depending on your browser. In Chrome, “Inspect Element” will pop up a module at the bottom of your page where you can see the HTML from the page. This trick will come in handy when you’re doing the exercise. If you need to DO anything with this HTML, better to use a program. More posts about this coming later.) If I want to “see” a webpage with a program, all I need to do is ask it for it’s HTML and read it.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">返回向用戶顯示網頁。當我在瀏覽器中輸入“ facebook.com”時，Facebook向我的瀏覽器發送了一堆HTML（基本上是網站外觀的代碼）。然後瀏覽器將這個HTML以漂亮的方式顯示給我。（有趣的事實：要在瀏覽器中查看任何頁面的HTML，請右鍵單擊該頁面，然後根據您的瀏覽器單擊“檢查元素”或“查看源代碼”。在Chrome中，“檢查元素”將在底部彈出一個模塊您可以在頁面的其中看到HTML。如果您需要使用此HTML做任何事情，最好使用一個程序。）如果我想“查看”帶有程序的網頁，我所要做的就是向其索要HTML並閱讀它。</span></p>
+<p>The ‘requests’ library does half of that job: it asks (requests, if you will) a server for information. This could be just data (through an API - more later) or in the case of this exercise, HTML.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">“請求”資料庫完成了一半工作：它向服務器請求（如果需要的話）信息。這可能只是數據（通過API-稍後介紹），或者在本練習中為HTML。</span></p>
+<p>Look at the<span> </span><a href="http://docs.python-requests.org/en/latest/">documentation</a><span> </span>for all the details you need. In this particular latest version, all you need to do to ask a website for it’s HTML is:</p>
+<p>查看文件檔以獲取所需的所有詳細信息。在此特定的最新版本中，向網站詢問其HTML所需要做的就是：</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_6076">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">requests</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">  </code><code class="py plain">url </code><code class="py keyword">=</code> <code class="py string">'http://github.com'</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">  </code><code class="py plain">r </code><code class="py keyword">=</code> <code class="py plain">requests.get(url)</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">  </code><code class="py plain">r_html </code><code class="py keyword">=</code> <code class="py plain">r.text</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Now inside the variable<span> </span><code class="highlighter-rouge">r_html</code>, you have the HTML of the page as a string. Reading (otherwise called<span> </span>parsing) happens with a different Python package.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">現在，在變量r_html中，你必須將頁面的HTML作為字符串。讀取（其他中說法為解析）發生在其他Python資料包中。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW" style="background-color: #ffff99;">BeautifulSoup</span></strong></p>
+<p>To solve our problem of parsing (reading, understanding, interpreting) the string of HTML we got from<span> </span><code class="highlighter-rouge">requests</code>, we use the<span> </span><a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"><code class="highlighter-rouge">BeautifulSoup</code></a><span> </span>library.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">為了解決解析（讀取，理解，解釋）從請求中獲得的HTML字符串的問題，我們使用BeautifulSoup資料庫。</span></p>
 <h2>Exercise31</h2>
 <p>Guess Letters<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/>(猜字母)</p>
 <p>Exercise 31（and <span style="text-decoration: underline; color: #0000ff;"><a href="https://www.practicepython.org/solution/2017/01/08/31-guess-letters-solutions.html" style="color: #0000ff; text-decoration: underline;">Solution</a></span>）<br/>練習31（解答）</p>
@@ -480,68 +547,98 @@ E _ _ _ _ _ _ _ E
 <h3 id="sample-solution">Sample Solution(示例解決方案)</h3>
 <p>Here is a sample solution from a reader that uses the solutions to Parts 1 and 2, and just puts them on one file:</p>
 <p>這是來自讀者的示例解決方案，使用了第1部分和第2部分的解決方案，並將它們放在一個文件中：</p>
-<p>import random</p>
-<p></p>
-<p>def choose_random_word():</p>
-<p>    words=[]</p>
-<p>    with open('sowpods.txt', 'r') as file:</p>
-<p>        line = file.readline()</p>
-<p>        while line:</p>
-<p>            words.append(line.replace("\n","".strip()))</p>
-<p>            line = file.readline()</p>
-<p>        choice=words[random.randint(0,len(words)-1)]</p>
-<p>        return choice</p>
-<p></p>
-<p>print("Welcome to Hangman!")</p>
-<p>secret_word=choose_random_word()</p>
-<p>dashes=list(secret_word)</p>
-<p>display_list=[]</p>
-<p>for i in dashes:</p>
-<p>    display_list.append("_")</p>
-<p>count=len(secret_word)</p>
-<p>guesses=0</p>
-<p>letter = 0</p>
-<p>used_list=[]</p>
-<p>while count != 0 and letter != "exit":</p>
-<p>    print<span>(" ".join(display_list))</span></p>
-<p>    <span>letter=input("Guess your letter: ")</span></p>
-<p></p>
-<p>    <span>if letter.upper() in used_list:</span></p>
-<p>        <span>print("Oops! Already guessed that letter.")</span></p>
-<p>    <span>else:</span></p>
-<p>        <span>for i in range(0,len(secret_word)):</span></p>
-<p>            <span>if letter.upper() == secret_word[i]:</span></p>
-<p>                <span>display_list[i]=letter.upper()</span></p>
-<p>                <span>count -= 1</span></p>
-<p><span>        guesses +=1</span></p>
-<p><span>    used_list.append(letter.upper())</span></p>
-<p><span></span></p>
-<p><span>if letter == "exit":</span></p>
-<p><span>    print("Thanks!")</span></p>
-<p><span>else:</span></p>
-<p><span>    print(" ".join(display_list))</span></p>
-<p><span>    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)</span></p>
-<div class="gist" id="gist43489631">
-<div class="gist-file">
-<div class="gist-data">
-<div class="js-gist-file-update-container js-task-list-container file-box">
-<div class="file my-2" id="file-guess-letters-solution">
-<div class="Box-body p-0 blob-wrapper data type-text" itemprop="text"></div>
-</div>
-</div>
-</div>
-<div class="gist-meta"><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></div>
-</div>
-</div>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
+
+
+
+def choose_random_word():
+
+    words=[]
+
+    with open('sowpods.txt', 'r') as file:
+
+        line = file.readline()
+
+        while line:
+
+            words.append(line.replace("\n","".strip()))
+
+            line = file.readline()
+
+        choice=words[random.randint(0,len(words)-1)]
+
+        return choice
+
+
+
+print("Welcome to Hangman!")
+
+secret_word=choose_random_word()
+
+dashes=list(secret_word)
+
+display_list=[]
+
+for i in dashes:
+
+    display_list.append("_")
+
+count=len(secret_word)
+
+guesses=0
+
+letter = 0
+
+used_list=[]
+
+while count != 0 and letter != "exit":
+
+    print(" ".join(display_list))
+
+    letter=input("Guess your letter: ")
+
+
+
+    if letter.upper() in used_list:
+
+        print("Oops! Already guessed that letter.")
+
+    else:
+
+        for i in range(0,len(secret_word)):
+
+            if letter.upper() == secret_word[i]:
+
+                display_list[i]=letter.upper()
+
+                count -= 1
+
+        guesses +=1
+
+    used_list.append(letter.upper())
+
+
+
+if letter == "exit":
+
+    print("Thanks!")
+
+else:
+
+    print(" ".join(display_list))
+
+    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)
+
+</pre>
+<p><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></p>
 <p>And here’s my solution, making more heavy use of functions:</p>
 <p>這是我的解決方案，更多地使用了功能：</p>
 <pre>"""
 Practice Python exercise 32
 Hangman
 http://www.practicepython.org/exercise/2017/01/10/32-hangman.html
-"""
-
-import random
+"""</pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
 
 def pick_random_word():
 	"""
@@ -617,6 +714,24 @@ if __name__ == '__main__':
 		print("Congratulations! You correctly guessed the word {}".format(WORD))
 	else:
 		print("Sorry, you list! Your word was {}".format(WORD))</pre>
+<pre></pre>
 <h3>程式試打</h3>
-<p>secret_word = "hangman"<br/>guess = ""<br/>guess_count = 0<br/>guess_limit = 3<br/>out_of_guesses = False</p>
-<p>while guess != secret_word and not(out_of_guesses):<br/>    if guess_count &lt; guess_limit:<br/>        guess = input("Enter guess: ")<br/>        guess_count +=1<br/>    else:<br/>        out_of_guesses = True<br/> <br/>if out_of_guesses:<br/>    print("Out of Guesses, You LOSE")<br/>else:<br/>    print("You win!")</p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">secret_word = "hangman"
+guess = ""
+guess_count = 0
+guess_limit = 3
+out_of_guesses = False
+
+while guess != secret_word and not(out_of_guesses):
+    if guess_count &lt; guess_limit:
+        guess = input("Enter guess: ")
+        guess_count +=1
+    else:
+        out_of_guesses = True
+
+if out_of_guesses:
+    print("Out of Guesses, You LOSE")
+else:
+    print("You win!")</pre>
+<p></p>

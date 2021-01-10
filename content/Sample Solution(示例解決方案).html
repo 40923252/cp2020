@@ -136,68 +136,98 @@ img.add_border {
     <div id="tipue_search_content">Exercise32 << <a href='Exercise32.html'>Previous</a> <a href='程式試打.html'>Next</a> >> 程式試打<br /><h1>Sample Solution(示例解決方案)</h1>
 <p>Here is a sample solution from a reader that uses the solutions to Parts 1 and 2, and just puts them on one file:</p>
 <p>這是來自讀者的示例解決方案，使用了第1部分和第2部分的解決方案，並將它們放在一個文件中：</p>
-<p>import random</p>
-<p></p>
-<p>def choose_random_word():</p>
-<p>    words=[]</p>
-<p>    with open('sowpods.txt', 'r') as file:</p>
-<p>        line = file.readline()</p>
-<p>        while line:</p>
-<p>            words.append(line.replace("\n","".strip()))</p>
-<p>            line = file.readline()</p>
-<p>        choice=words[random.randint(0,len(words)-1)]</p>
-<p>        return choice</p>
-<p></p>
-<p>print("Welcome to Hangman!")</p>
-<p>secret_word=choose_random_word()</p>
-<p>dashes=list(secret_word)</p>
-<p>display_list=[]</p>
-<p>for i in dashes:</p>
-<p>    display_list.append("_")</p>
-<p>count=len(secret_word)</p>
-<p>guesses=0</p>
-<p>letter = 0</p>
-<p>used_list=[]</p>
-<p>while count != 0 and letter != "exit":</p>
-<p>    print<span>(" ".join(display_list))</span></p>
-<p>    <span>letter=input("Guess your letter: ")</span></p>
-<p></p>
-<p>    <span>if letter.upper() in used_list:</span></p>
-<p>        <span>print("Oops! Already guessed that letter.")</span></p>
-<p>    <span>else:</span></p>
-<p>        <span>for i in range(0,len(secret_word)):</span></p>
-<p>            <span>if letter.upper() == secret_word[i]:</span></p>
-<p>                <span>display_list[i]=letter.upper()</span></p>
-<p>                <span>count -= 1</span></p>
-<p><span>        guesses +=1</span></p>
-<p><span>    used_list.append(letter.upper())</span></p>
-<p><span></span></p>
-<p><span>if letter == "exit":</span></p>
-<p><span>    print("Thanks!")</span></p>
-<p><span>else:</span></p>
-<p><span>    print(" ".join(display_list))</span></p>
-<p><span>    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)</span></p>
-<div class="gist" id="gist43489631">
-<div class="gist-file">
-<div class="gist-data">
-<div class="js-gist-file-update-container js-task-list-container file-box">
-<div class="file my-2" id="file-guess-letters-solution">
-<div class="Box-body p-0 blob-wrapper data type-text" itemprop="text"></div>
-</div>
-</div>
-</div>
-<div class="gist-meta"><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></div>
-</div>
-</div>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
+
+
+
+def choose_random_word():
+
+    words=[]
+
+    with open('sowpods.txt', 'r') as file:
+
+        line = file.readline()
+
+        while line:
+
+            words.append(line.replace("\n","".strip()))
+
+            line = file.readline()
+
+        choice=words[random.randint(0,len(words)-1)]
+
+        return choice
+
+
+
+print("Welcome to Hangman!")
+
+secret_word=choose_random_word()
+
+dashes=list(secret_word)
+
+display_list=[]
+
+for i in dashes:
+
+    display_list.append("_")
+
+count=len(secret_word)
+
+guesses=0
+
+letter = 0
+
+used_list=[]
+
+while count != 0 and letter != "exit":
+
+    print(" ".join(display_list))
+
+    letter=input("Guess your letter: ")
+
+
+
+    if letter.upper() in used_list:
+
+        print("Oops! Already guessed that letter.")
+
+    else:
+
+        for i in range(0,len(secret_word)):
+
+            if letter.upper() == secret_word[i]:
+
+                display_list[i]=letter.upper()
+
+                count -= 1
+
+        guesses +=1
+
+    used_list.append(letter.upper())
+
+
+
+if letter == "exit":
+
+    print("Thanks!")
+
+else:
+
+    print(" ".join(display_list))
+
+    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)
+
+</pre>
+<p><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></p>
 <p>And here’s my solution, making more heavy use of functions:</p>
 <p>這是我的解決方案，更多地使用了功能：</p>
 <pre>"""
 Practice Python exercise 32
 Hangman
 http://www.practicepython.org/exercise/2017/01/10/32-hangman.html
-"""
-
-import random
+"""</pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
 
 def pick_random_word():
 	"""
@@ -273,6 +303,7 @@ if __name__ == '__main__':
 		print("Congratulations! You correctly guessed the word {}".format(WORD))
 	else:
 		print("Sorry, you list! Your word was {}".format(WORD))</pre>
+<pre></pre>
 <br />Exercise32 << <a href='Exercise32.html'>Previous</a> <a href='程式試打.html'>Next</a> >> 程式試打</div>
         
     <!-- footer -->
