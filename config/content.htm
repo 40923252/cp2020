@@ -474,6 +474,20 @@ print(list2)</pre>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW" style="background-color: #ffff99;">BeautifulSoup</span></strong></p>
 <p>To solve our problem of parsing (reading, understanding, interpreting) the string of HTML we got from<span> </span><code class="highlighter-rouge">requests</code>, we use the<span> </span><a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"><code class="highlighter-rouge">BeautifulSoup</code></a><span> </span>library.</p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">為了解決解析（讀取，理解，解釋）從請求中獲得的HTML字符串的問題，我們使用BeautifulSoup資料庫。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>What it does is give a </span><em>hierarchical</em><span><span> </span>(a pyramid structure) to the HTML in the document. If you don’t know anything about HTML, the<span> </span></span><a href="http://en.wikipedia.org/wiki/HTML">Wikipedia</a><span><span> </span>article is a good summary. For the purposes of this exercise, you don’t need to know anything about HTML beyond being able to look at it quickly.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">它的作用是為文檔中的HTML提供分層階級結構（金字塔結構）。如果您對HTML一無所知，請參閱Wikipedia文章。在本練習中，除了能夠快速查看HTML外，您不需要了解其他任何有關HTML的知識。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Because </span><code class="highlighter-rouge">BeautifulSoup</code><span><span> </span>takes care of interpreting our HTML for us, we can ask it things like: “give me all the lines with<span> </span></span><code class="highlighter-rouge">&lt;p&gt;</code><span><span> </span>tags” or “find me the parent element to the<span> </span></span><code class="highlighter-rouge">&lt;title&gt;</code><span><span> </span>element”, etc.</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">因為BeautifulSoup負責為我們解釋HTML，所以我們可以提出類似的要求：“給我所有帶有&lt;p&gt;標籤的行列”或“為父元素找到&lt;title&gt;元素”，等等。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Your code would look something like this:</span></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您的代碼如下所示：</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from bs4 import BeautifulSoup
+
+  # some requests code here for getting r_html 
+
+  soup = BeautifulSoup(r_html)
+  title = soup.find('span', 'articletitle').string</pre>
+<p><span>And you can do many more things in </span><code class="highlighter-rouge">BeautifulSoup</code><span>, but I will leave you to explore those by yourself or through other later exercises.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">您可以在BeautifulSoup中做更多的事情，但是我將讓您自己或通過其他後續練習來探索這些內容。</span></p>
 <h2>Exercise31</h2>
 <p>Guess Letters<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/>(猜字母)</p>
 <p>Exercise 31（and <span style="text-decoration: underline; color: #0000ff;"><a href="https://www.practicepython.org/solution/2017/01/08/31-guess-letters-solutions.html" style="color: #0000ff; text-decoration: underline;">Solution</a></span>）<br/>練習31（解答）</p>

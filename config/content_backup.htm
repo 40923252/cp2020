@@ -356,17 +356,48 @@
 <p><span style="text-decoration: underline;"><span style="color: #0000ff;"><a href="https://www.kaggle.com/a40923252/cp2020hw2" style="color: #0000ff; text-decoration: underline;">https://www.kaggle.com/a40923252/cp2020hw2</a></span></span></p>
 <p><span style="color: #0000ff;"></span>亂數分組:</p>
 <p>先從網站上抓取班級名單</p>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(line.decode('utf-8'))<br/>print(cp1b)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(line.decode('utf-8'))
+print(cp1b)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;&gt;</span>['40523138\n', '40523148\n', '40723217\n', '40728238\n', '40823148\n', '40823152\n', '40923201\n', '40923202\n', '40923203\n', '40923204\n', '40923205\n', '40923206\n', '40923207\n', '40923208\n', '40923209\n', '40923210\n', '40923211\n', '40923212\n', '40923213\n', '40923214\n', '40923216\n', '40923217\n', '40923218\n', '40923219\n', '40923220\n', '40923221\n', '40923223\n', '40923224\n', '40923225\n', '40923226\n', '40923227\n', '40923228\n', '40923229\n', '40923230\n', '40923231\n', '40923232\n', '40923233\n', '40923234\n', '40923235\n', '40923236\n', '40923237\n', '40923238\n', '40923239\n', '40923240\n', '40923241\n', '40923242\n', '40923243\n', '40923244\n', '40923245\n', '40923246\n', '40923247\n', '40923248\n', '40923249\n', '40923250\n', '40923251\n', '40923252\n', '40923253\n']</p>
 <hr/>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(int(line.decode('utf-8').rstrip())) <br/>print(cp1b)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(int(line.decode('utf-8').rstrip())) 
+print(cp1b)
+</pre>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]</span></p>
 <hr/>
-<p><span></span><span>from random import shuffle #random(亂數) #shuffle<br/>list = [40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]<br/>shuffle(list)<br/>n = 5<br/>m = int(len(list)/n)<br/>list2 = []<br/>for i in range(0, len(list),m):<br/>    list2.append(list[i:i+m])<br/>print(list2)<br/></span></p>
-<p><span><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[[40923211, 40923242, 40923239, 40923250, 40923253, 40923210, 40923226, 40923240, 40923243, 40923225, 40923219], [40923218, 40923251, 40523148, 40923208, 40923214, 40923213, 40923207, 40523138, 40923224, 40823152, 40923232], [40923249, 40923234, 40923252, 40923245, 40923221, 40923203, 40923220, 40923205, 40923206, 40923238, 40923212], [40923228, 40923209, 40923204, 40923231, 40923216, 40823148, 40923244, 40923233, 40923246, 40923237, 40923230], [40923202, 40923223, 40923236, 40923247, 40923229, 40923201, 40728238, 40723217, 40923217, 40923227, 40923241], [40923248, 40923235]]<br/></span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from random import shuffle #random(亂數) #shuffle
+list = [40523138, 40523148, 40723217, 40728238, 40823148, 40823152, 40923201, 40923202, 40923203, 40923204, 40923205, 40923206, 40923207, 40923208, 40923209, 40923210, 40923211, 40923212, 40923213, 40923214, 40923216, 40923217, 40923218, 40923219, 40923220, 40923221, 40923223, 40923224, 40923225, 40923226, 40923227, 40923228, 40923229, 40923230, 40923231, 40923232, 40923233, 40923234, 40923235, 40923236, 40923237, 40923238, 40923239, 40923240, 40923241, 40923242, 40923243, 40923244, 40923245, 40923246, 40923247, 40923248, 40923249, 40923250, 40923251, 40923252, 40923253]
+shuffle(list)
+n = 5
+m = int(len(list)/n)
+list2 = []
+for i in range(0, len(list),m):
+    list2.append(list[i:i+m])
+print(list2)</pre>
+<p><span></span><span><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span>[[40923211, 40923242, 40923239, 40923250, 40923253, 40923210, 40923226, 40923240, 40923243, 40923225, 40923219], [40923218, 40923251, 40523148, 40923208, 40923214, 40923213, 40923207, 40523138, 40923224, 40823152, 40923232], [40923249, 40923234, 40923252, 40923245, 40923221, 40923203, 40923220, 40923205, 40923206, 40923238, 40923212], [40923228, 40923209, 40923204, 40923231, 40923216, 40823148, 40923244, 40923233, 40923246, 40923237, 40923230], [40923202, 40923223, 40923236, 40923247, 40923229, 40923201, 40728238, 40723217, 40923217, 40923227, 40923241], [40923248, 40923235]]<br/></span></span></p>
 <hr/>
 <p>試作整合</p>
-<p>import urllib.request<br/>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>cp1b = []<br/>for line in urllib.request.urlopen(target_url):<br/>    cp1b.append(int(line.decode('utf-8').rstrip()))<br/>from random import shuffle<br/>shuffle(cp1b)<br/>n = 5<br/>m = int(len(cp1b)/n)<br/>list2 = []<br/>for i in range(0,len(cp1b),m):<br/>    list2.append(cp1b[i:i+m])<br/>print(list2)</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
+for line in urllib.request.urlopen(target_url):
+    cp1b.append(int(line.decode('utf-8').rstrip()))
+from random import shuffle
+shuffle(cp1b)
+n = 5
+m = int(len(cp1b)/n)
+list2 = []
+for i in range(0,len(cp1b),m):
+    list2.append(cp1b[i:i+m])
+print(list2)</pre>
 <p><span style="color: #ff0000;">&gt;&gt;</span><span><span style="color: #ff0000;">&gt;</span></span>[[40923243, 40923250, 40923205, 40923245, 40923220, 40723217, 40728238, 40923208, 40923248, 40923209, 40923238], [40923240, 40923217, 40923201, 40923204, 40923212, 40923229, 40923219, 40923202, 40923227, 40923233, 40923234], [40923242, 40923211, 40923223, 40923231, 40923224, 40923207, 40923226, 40923253, 40823148, 40923232, 40923247], [40523148, 40523138, 40923213, 40923252, 40823152, 40923249, 40923228, 40923235, 40923218, 40923241, 40923206], [40923251, 40923239, 40923216, 40923203, 40923214, 40923237, 40923225, 40923230, 40923210, 40923244, 40923221], [40923236, 40923246]]</p>
 <h1>HomeWork3</h1>
 <h2>Exercise17</h2>
@@ -440,6 +471,9 @@
 </div>
 <p>Now inside the variable<span> </span><code class="highlighter-rouge">r_html</code>, you have the HTML of the page as a string. Reading (otherwise called<span> </span>parsing) happens with a different Python package.</p>
 <p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">現在，在變量r_html中，你必須將頁面的HTML作為字符串。讀取（其他中說法為解析）發生在其他Python資料包中。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><strong><span lang="zh-TW" style="background-color: #ffff99;">BeautifulSoup</span></strong></p>
+<p>To solve our problem of parsing (reading, understanding, interpreting) the string of HTML we got from<span> </span><code class="highlighter-rouge">requests</code>, we use the<span> </span><a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"><code class="highlighter-rouge">BeautifulSoup</code></a><span> </span>library.</p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">為了解決解析（讀取，理解，解釋）從請求中獲得的HTML字符串的問題，我們使用BeautifulSoup資料庫。</span></p>
 <h2>Exercise31</h2>
 <p>Guess Letters<img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/>(猜字母)</p>
 <p>Exercise 31（and <span style="text-decoration: underline; color: #0000ff;"><a href="https://www.practicepython.org/solution/2017/01/08/31-guess-letters-solutions.html" style="color: #0000ff; text-decoration: underline;">Solution</a></span>）<br/>練習31（解答）</p>
@@ -513,68 +547,98 @@ E _ _ _ _ _ _ _ E
 <h3 id="sample-solution">Sample Solution(示例解決方案)</h3>
 <p>Here is a sample solution from a reader that uses the solutions to Parts 1 and 2, and just puts them on one file:</p>
 <p>這是來自讀者的示例解決方案，使用了第1部分和第2部分的解決方案，並將它們放在一個文件中：</p>
-<p>import random</p>
-<p></p>
-<p>def choose_random_word():</p>
-<p>    words=[]</p>
-<p>    with open('sowpods.txt', 'r') as file:</p>
-<p>        line = file.readline()</p>
-<p>        while line:</p>
-<p>            words.append(line.replace("\n","".strip()))</p>
-<p>            line = file.readline()</p>
-<p>        choice=words[random.randint(0,len(words)-1)]</p>
-<p>        return choice</p>
-<p></p>
-<p>print("Welcome to Hangman!")</p>
-<p>secret_word=choose_random_word()</p>
-<p>dashes=list(secret_word)</p>
-<p>display_list=[]</p>
-<p>for i in dashes:</p>
-<p>    display_list.append("_")</p>
-<p>count=len(secret_word)</p>
-<p>guesses=0</p>
-<p>letter = 0</p>
-<p>used_list=[]</p>
-<p>while count != 0 and letter != "exit":</p>
-<p>    print<span>(" ".join(display_list))</span></p>
-<p>    <span>letter=input("Guess your letter: ")</span></p>
-<p></p>
-<p>    <span>if letter.upper() in used_list:</span></p>
-<p>        <span>print("Oops! Already guessed that letter.")</span></p>
-<p>    <span>else:</span></p>
-<p>        <span>for i in range(0,len(secret_word)):</span></p>
-<p>            <span>if letter.upper() == secret_word[i]:</span></p>
-<p>                <span>display_list[i]=letter.upper()</span></p>
-<p>                <span>count -= 1</span></p>
-<p><span>        guesses +=1</span></p>
-<p><span>    used_list.append(letter.upper())</span></p>
-<p><span></span></p>
-<p><span>if letter == "exit":</span></p>
-<p><span>    print("Thanks!")</span></p>
-<p><span>else:</span></p>
-<p><span>    print(" ".join(display_list))</span></p>
-<p><span>    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)</span></p>
-<div class="gist" id="gist43489631">
-<div class="gist-file">
-<div class="gist-data">
-<div class="js-gist-file-update-container js-task-list-container file-box">
-<div class="file my-2" id="file-guess-letters-solution">
-<div class="Box-body p-0 blob-wrapper data type-text" itemprop="text"></div>
-</div>
-</div>
-</div>
-<div class="gist-meta"><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></div>
-</div>
-</div>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
+
+
+
+def choose_random_word():
+
+    words=[]
+
+    with open('sowpods.txt', 'r') as file:
+
+        line = file.readline()
+
+        while line:
+
+            words.append(line.replace("\n","".strip()))
+
+            line = file.readline()
+
+        choice=words[random.randint(0,len(words)-1)]
+
+        return choice
+
+
+
+print("Welcome to Hangman!")
+
+secret_word=choose_random_word()
+
+dashes=list(secret_word)
+
+display_list=[]
+
+for i in dashes:
+
+    display_list.append("_")
+
+count=len(secret_word)
+
+guesses=0
+
+letter = 0
+
+used_list=[]
+
+while count != 0 and letter != "exit":
+
+    print(" ".join(display_list))
+
+    letter=input("Guess your letter: ")
+
+
+
+    if letter.upper() in used_list:
+
+        print("Oops! Already guessed that letter.")
+
+    else:
+
+        for i in range(0,len(secret_word)):
+
+            if letter.upper() == secret_word[i]:
+
+                display_list[i]=letter.upper()
+
+                count -= 1
+
+        guesses +=1
+
+    used_list.append(letter.upper())
+
+
+
+if letter == "exit":
+
+    print("Thanks!")
+
+else:
+
+    print(" ".join(display_list))
+
+    print("Good job! You figured that the word is "+secret_word+" after guessing %s letters!" % guesses)
+
+</pre>
+<p><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf/raw/a2e33c24e869cf33a98d14b8d8ae747d7774ea7b/Guess%20Letters%20Solution">view raw</a><a href="https://gist.github.com/anonymous/8ed14085c77095e106c79952be5588cf#file-guess-letters-solution">Guess Letters Solution</a><span> </span>hosted with ❤ by<span> </span><a href="https://github.com/">GitHub</a></p>
 <p>And here’s my solution, making more heavy use of functions:</p>
 <p>這是我的解決方案，更多地使用了功能：</p>
 <pre>"""
 Practice Python exercise 32
 Hangman
 http://www.practicepython.org/exercise/2017/01/10/32-hangman.html
-"""
-
-import random
+"""</pre>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">import random
 
 def pick_random_word():
 	"""
@@ -650,9 +714,9 @@ if __name__ == '__main__':
 		print("Congratulations! You correctly guessed the word {}".format(WORD))
 	else:
 		print("Sorry, you list! Your word was {}".format(WORD))</pre>
+<pre></pre>
 <h3>程式試打</h3>
-<p>secret_word = "hangman"<br/>guess = ""<br/>guess_count = 0<br/>guess_limit = 3<br/>out_of_guesses = False</p>
-<p>while guess != secret_word and not(out_of_guesses):<br/>    if guess_count &lt; guess_limit:<br/>        guess = input("Enter guess: ")<br/>        guess_count +=1<br/>    else:<br/>        out_of_guesses = True<br/> <br/>if out_of_guesses:<br/>    print("Out of Guesses, You LOSE")<br/>else:<br/>    print("You win!")</p>
+<p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">secret_word = "hangman"
 guess = ""
 guess_count = 0
